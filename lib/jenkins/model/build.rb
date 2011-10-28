@@ -47,7 +47,7 @@ module Jenkins
       end
 
       def build_wrapper_environment(cls)
-        @native.getEnvironmentList().find do |e|
+        @native.getEnvironments().find do |e|
           e.instance_of?(Jenkins::Plugin::Proxies::EnvironmentWrapper) && e.build_wrapper.instance_of?(cls)
         end
       end
